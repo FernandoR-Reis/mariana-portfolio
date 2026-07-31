@@ -56,9 +56,15 @@
     </ul>
     <div class="nav-actions">
       <div class="lang-switch" id="langSwitch" role="group" aria-label="Selecionar idioma do site">
-        <button class="lang-btn is-active" data-lang="pt" aria-pressed="true" aria-label="Português" title="Português">🇧🇷</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English" title="English">🇺🇸</button>
-        <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="Deutsch" title="Deutsch">🇩🇪</button>
+        <button class="lang-current" id="langToggle" aria-label="Abrir idiomas" aria-expanded="false" aria-controls="langMenu">
+          <span class="lang-current-flag" id="langCurrentFlag">🇧🇷</span>
+          <span class="lang-caret" aria-hidden="true">^</span>
+        </button>
+        <div class="lang-menu" id="langMenu">
+          <button class="lang-btn is-active" data-lang="pt" aria-pressed="true" aria-label="Português" title="Português">🇧🇷</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English" title="English">🇺🇸</button>
+          <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="Deutsch" title="Deutsch">🇩🇪</button>
+        </div>
       </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
         <svg class="icon-moon"><use href="#ic-moon"></use></svg>

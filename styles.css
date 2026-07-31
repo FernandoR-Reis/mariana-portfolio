@@ -285,26 +285,82 @@ nav.wrap {
 }
 
 .lang-switch {
+  position: relative;
+}
+
+.lang-current {
+  width: 44px;
+  height: 26px;
+  border: 1px solid var(--border-strong);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: border-color .25s, color .25s;
+}
+
+.lang-current:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.lang-current-flag {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.lang-caret {
+  font-size: 11px;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform .2s var(--ease);
+}
+
+.lang-switch.open .lang-caret {
+  transform: translateY(1px) rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 8px;
   border: 1px solid var(--border-strong);
-  padding: 2px;
-  background: color-mix(in srgb, var(--surface) 68%, transparent);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+
+.lang-switch.open .lang-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .lang-btn {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 24px;
   border: 0;
   background: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
-  opacity: .7;
+  opacity: .82;
+  border-radius: 8px;
   transition: opacity .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
 }
 
@@ -1418,15 +1474,20 @@ footer {
     gap: 10px;
   }
 
-  .lang-switch {
-    gap: 2px;
-    padding: 1px;
+  .lang-current {
+    width: 42px;
+    height: 26px;
   }
 
   .lang-btn {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 24px;
     font-size: 14px;
+  }
+
+  .lang-menu {
+    top: 34px;
+    right: -2px;
   }
 
   .hero {
