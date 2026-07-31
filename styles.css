@@ -284,6 +284,40 @@ nav.wrap {
   gap: 16px;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border-strong);
+  padding: 2px;
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
+}
+
+.lang-btn {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  opacity: .7;
+  transition: opacity .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+}
+
+.lang-btn:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.lang-btn.is-active {
+  opacity: 1;
+  background: var(--surface-2);
+}
+
 .theme-toggle,
 .menu-btn {
   width: 38px;
@@ -1382,6 +1416,17 @@ footer {
 
   .nav-actions {
     gap: 10px;
+  }
+
+  .lang-switch {
+    gap: 2px;
+    padding: 1px;
+  }
+
+  .lang-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
 
   .hero {
